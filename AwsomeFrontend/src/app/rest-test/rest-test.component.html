@@ -1,0 +1,30 @@
+<p>rest-test works!</p>
+<div *ngFor="let x of person">
+  <p>
+    Name: {{x.name}}
+    <br>
+    Role: {{x.role}}
+  </p>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="getRole()">
+
+  <div>
+    <label >
+      Name
+      <input id="name" type="text" formControlName="name">
+    </label>
+  </div>
+  <p></p>
+  <button class="button" type="submit">Get Role</button>
+
+</form>
+
+<div *ngIf="this.role">
+  {{this.role.role}}
+  {{this.role.changeValues}}
+  {{this.role.addCustomer}}
+  {{this.role.addWorker}}
+  {{this.role.deleteCustomer}}
+  {{this.role.deleteWorker}}
+</div>
